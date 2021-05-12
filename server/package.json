@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "MERN Image Gallery",
+  "author": "Sulthon Abdul Malik",
+  "license": "MIT",
+  "main": "src/bin/www",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "^14.x",
+    "npm": "^6.x",
+    "yarn": "^1.x"
+  }
+}

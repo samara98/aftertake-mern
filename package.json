@@ -4,10 +4,28 @@
   "description": "MERN Image Gallery",
   "author": "Sulthon Abdul Malik",
   "license": "MIT",
+  "scripts": {
+    "start": "yarn --cwd ./server start",
+    "prettier:file": "prettier -w \"server/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
+  },
   "keywords": [],
   "repository": "https://github.com/samara98/aftertake-mern.git",
   "bugs": "https://github.com/samara98/aftertake-mern/issues",
   "homepage": "https://github.com/samara98/aftertake-mern#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}": "prettier -w"
+  },
   "engines": {
     "node": "^14.x",
     "npm": "^6.x",
