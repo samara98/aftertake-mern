@@ -4,9 +4,16 @@
   "description": "MERN Image Gallery",
   "author": "Sulthon Abdul Malik",
   "license": "MIT",
-  "main": "src/bin/www",
+  "main": "src/bin/www.ts",
   "scripts": {
-    "start": "node .",
+    "start": "node build/bin/www",
+    "start:dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only .",
+    "start:debug": "cross-env DEBUG=server:* npm run start:dev",
+    "start:debug-express": "cross-env DEBUG=express:* npm run start:dev",
+    "prod": "cross-env NODE_ENV=production DEBUG=express:* npm start",
+    "build": "npm-run-all clean compile",
+    "clean": "rimraf ./build",
+    "compile": "tsc --build",
     "prettier:file": "npm run prettier:file:server --prefix .."
   },
   "dependencies": {
@@ -17,7 +24,18 @@
     "http-errors": "^1.8.0",
     "morgan": "^1.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/debug": "^4.1.5",
+    "@types/http-errors": "^1.8.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^15.0.2",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  },
   "engines": {
     "node": "^14.x",
     "npm": "^6.x",

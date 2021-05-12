@@ -5,9 +5,12 @@
   "author": "Sulthon Abdul Malik",
   "license": "MIT",
   "scripts": {
-    "server": "yarn --cwd ./server start",
+    "start": "yarn --cwd ./server start",
     "client": "yarn --cwd ./client start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "server": "yarn --cwd ./server start:debug",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prod": "yarn --cwd ./server prod",
+    "build": "yarn --cwd ./server build && yarn --cwd ./client build",
     "prettier:file:server": "prettier -w \"server/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\"",
     "prettier:file:client": "prettier -w \"client/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\"",
     "prettier:file": "prettier -w \"{server,client}/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\""

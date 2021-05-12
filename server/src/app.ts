@@ -1,10 +1,10 @@
-const createHttpError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+import createHttpError from 'http-errors';
+import express, { NextFunction, Request, Response } from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
 
-const router = require('./router');
+import router from './router';
 
 const app = express();
 
@@ -29,19 +29,22 @@ if (app.get('env') === 'production')
   });
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createHttpError(404));
+app.use(async (req, res, next) => {
+  return next(createHttpError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(async (err: any, req: Request, res: Response, next: NextFunction) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  return next();
+});
+app.use(async (req, res) => {
+  return res.render('error');
 });
 
-module.exports = app;
+export default app;
