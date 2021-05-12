@@ -5,11 +5,16 @@
   "author": "Sulthon Abdul Malik",
   "license": "MIT",
   "scripts": {
-    "start": "yarn --cwd ./server start",
-    "prettier:file": "prettier -w \"server/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\""
+    "server": "yarn --cwd ./server start",
+    "client": "yarn --cwd ./client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "prettier:file:server": "prettier -w \"server/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\"",
+    "prettier:file:client": "prettier -w \"client/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\"",
+    "prettier:file": "prettier -w \"{server,client}/{public,src}/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\""
   },
   "dependencies": {},
   "devDependencies": {
+    "concurrently": "^6.1.0",
     "husky": "4",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0"

@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "src/bin/www",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "prettier:file": "npm run prettier:file:server --prefix .."
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
