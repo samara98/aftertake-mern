@@ -1,2 +1,3 @@
-# aftertake-mern
+# Aftertake
+
 MERN Image Gallery
