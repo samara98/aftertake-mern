@@ -14,7 +14,7 @@ const App: FC = () => {
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-500">
+      <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-light-blue-400 to-indigo-500">
         <button
           type="button"
           onClick={openModal}

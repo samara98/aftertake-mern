@@ -7,7 +7,7 @@ import app from '../app';
 import dbg from 'debug';
 import http from 'http';
 
-const debug = dbg('server:server');
+const debug = dbg('aftertake:server');
 
 /**
  * Get port from environment and store in Express.

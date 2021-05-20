@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node build/bin/www",
     "start:dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only .",
-    "start:debug": "cross-env DEBUG=server:* npm run start:dev",
+    "start:debug": "cross-env DEBUG=aftertake:*,prisma:* npm run start:dev",
     "start:debug-express": "cross-env DEBUG=express:* npm run start:dev",
     "prod": "cross-env NODE_ENV=production DEBUG=express:* npm start",
     "build": "npm-run-all clean compile",

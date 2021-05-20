@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 if (app.get('env') !== 'production')
-  app.use(express.static(path.join(__dirname, '..', '..', 'client', 'public')));
+  app.use(express.static(path.join(__dirname, '..', '..', 'client', 'public'), { index: false }));
 if (app.get('env') === 'production')
   app.use(express.static(path.join(__dirname, '..', '..', 'client', 'build')));
 
